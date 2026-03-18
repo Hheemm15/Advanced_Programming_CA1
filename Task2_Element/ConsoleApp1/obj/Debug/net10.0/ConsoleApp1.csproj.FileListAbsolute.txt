@@ -1,0 +1,14 @@
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/bin/Debug/net10.0/ConsoleApp1
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/bin/Debug/net10.0/ConsoleApp1.deps.json
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/bin/Debug/net10.0/ConsoleApp1.runtimeconfig.json
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/bin/Debug/net10.0/ConsoleApp1.dll
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/bin/Debug/net10.0/ConsoleApp1.pdb
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.AssemblyInfo.cs
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.dll
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/refint/ConsoleApp1.dll
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.pdb
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.genruntimeconfig.cache
+/Users/hemang15/Advanced programming CA1/Task2_Element/ConsoleApp1/obj/Debug/net10.0/ref/ConsoleApp1.dll
