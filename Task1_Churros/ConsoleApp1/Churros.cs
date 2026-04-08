@@ -1,13 +1,11 @@
-using System;
-
-class Churros
+public class Churros
 {
-    public string Type { get; set; }
+    public string Name { get; set; }
     public double Price { get; set; }
 
-    public Churros(string type, double price)
+    public Churros(string name, double price)
     {
-        Type = type;
+        Name = name;
         Price = price;
     }
 }

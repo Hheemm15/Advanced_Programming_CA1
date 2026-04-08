@@ -3,24 +3,19 @@ using System.Collections.Generic;
 
 class Program
 {
-    static Queue<Order> orders = new Queue<Order>();
-    static int orderCounter = 1;
+    static Queue<Order> orderQueue = new Queue<Order>();
+    static List<Churros> menu = Menu.GetMenu();
 
     static void Main()
     {
+        OrderTests.RunTest();
+
         while (true)
         {
-            Console.WriteLine("\n--- Delicious Churros ---");
-            Console.WriteLine("1. Place Order");
-            Console.WriteLine("2. Deliver Order");
-            Console.WriteLine("0. Exit");
-            Console.Write("Choose option: ");
+            Menu.ShowMenu();
 
-            if (!int.TryParse(Console.ReadLine(), out int choice))
-            {
-                Console.WriteLine("Invalid input. Please enter a number.");
-                continue;
-            }
+            Console.Write("Enter choice: ");
+            int.TryParse(Console.ReadLine(), out int choice);
 
             switch (choice)
             {
@@ -33,7 +28,7 @@ class Program
                     break;
 
                 case 0:
-                    Console.WriteLine("Exiting program...");
+                    Console.WriteLine("Exiting...");
                     return;
 
                 default:
@@ -45,78 +40,47 @@ class Program
 
     static void PlaceOrder()
     {
-        Console.WriteLine("\nChoose Churros:");
-        Console.WriteLine("1. Plain Sugar (€6)");
-        Console.WriteLine("2. Cinnamon Sugar (€6)");
-        Console.WriteLine("3. Chocolate Sauce (€8)");
-        Console.WriteLine("4. Nutella (€8)");
-        Console.Write("Select option: ");
+        Console.WriteLine("\nSelect Churros:");
 
-        if (!int.TryParse(Console.ReadLine(), out int option))
+        for (int i = 0; i < menu.Count; i++)
         {
-            Console.WriteLine("Invalid input.");
+            Console.WriteLine($"{i + 1}. {menu[i].Name} (€{menu[i].Price})");
+        }
+
+        Console.Write("Enter option: ");
+        int.TryParse(Console.ReadLine(), out int option);
+
+        if (option < 1 || option > menu.Count)
+        {
+            Console.WriteLine("Invalid selection.");
             return;
         }
 
-        string type = "";
-        double price = 0;
-
-        switch (option)
-        {
-            case 1:
-                type = "Plain Sugar";
-                price = 6;
-                break;
-
-            case 2:
-                type = "Cinnamon Sugar";
-                price = 6;
-                break;
-
-            case 3:
-                type = "Chocolate Sauce";
-                price = 8;
-                break;
-
-            case 4:
-                type = "Nutella";
-                price = 8;
-                break;
-
-            default:
-                Console.WriteLine("Invalid churros option.");
-                return;
-        }
+        Churros selected = menu[option - 1];
 
         Console.Write("Enter quantity: ");
+        int.TryParse(Console.ReadLine(), out int qty);
 
-        if (!int.TryParse(Console.ReadLine(), out int qty))
-        {
-            Console.WriteLine("Invalid quantity.");
-            return;
-        }
+        Order order = new Order(selected.Name, qty, selected.Price);
 
-        Order order = new Order(orderCounter, type, qty);
-        double bill = order.PayBill(price);
+        double bill = order.PayBill();
 
-        orders.Enqueue(order);
+        orderQueue.Enqueue(order);
 
-        Console.WriteLine("Order placed successfully!");
-        Console.WriteLine("Order Number: " + orderCounter);
+        Console.WriteLine("\nOrder placed successfully!");
+        Console.WriteLine("Order Number: " + order.OrderNo);
         Console.WriteLine("Total Bill: €" + bill);
-
-        orderCounter++;
     }
 
     static void DeliverOrder()
     {
-        if (orders.Count == 0)
+        if (orderQueue.Count == 0)
         {
             Console.WriteLine("No orders in queue.");
             return;
         }
 
-        Order order = orders.Dequeue();
+        Order order = orderQueue.Dequeue();
         order.CollectOrder();
     }
 }

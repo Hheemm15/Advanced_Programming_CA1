@@ -12,3 +12,4 @@
 /Users/hemang15/Advanced programming CA1/Task1_Churros/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.pdb
 /Users/hemang15/Advanced programming CA1/Task1_Churros/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.genruntimeconfig.cache
 /Users/hemang15/Advanced programming CA1/Task1_Churros/ConsoleApp1/obj/Debug/net10.0/ref/ConsoleApp1.dll
+/Users/hemang15/Advanced programming CA1/Task1_Churros/ConsoleApp1/obj/Debug/net10.0/ConsoleApp1.sourcelink.json
