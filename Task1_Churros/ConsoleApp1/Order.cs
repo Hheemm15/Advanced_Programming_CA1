@@ -1,32 +1,37 @@
 using System;
 
-public class Order
+class Order
 {
-    private static int counter = 1000; // unique ID generator
+    public int OrderNo;
+    public string ItemName;
+    public int Quantity;
+    private double price;
 
-    public int OrderNo { get; private set; }
-    public string OrderDetails { get; set; }
-    public int Quantity { get; set; }
-    public double Price { get; set; }
-
-    public Order(string details, int quantity, double price)
+    // Constructor
+    public Order(int orderNo, string itemName, int quantity, double price)
     {
-        OrderNo = ++counter; // unique order number
-        OrderDetails = details;
+        Console.WriteLine("Order Created");
+        OrderNo = orderNo;
+        ItemName = itemName;
         Quantity = quantity;
-        Price = price;
+        this.price = price;
     }
 
     public double PayBill()
     {
-        return Quantity * Price;
+        return Quantity * price;
     }
 
     public void CollectOrder()
     {
-        Console.WriteLine("\nOrder Delivered!");
-        Console.WriteLine("Order Number: " + OrderNo);
-        Console.WriteLine("Item: " + OrderDetails);
+        Console.WriteLine("Order Delivered: " + OrderNo);
+    }
+
+    public void ShowOrder()
+    {
+        Console.WriteLine("\nOrder No: " + OrderNo);
+        Console.WriteLine("Item: " + ItemName);
         Console.WriteLine("Quantity: " + Quantity);
+        Console.WriteLine("Total Bill: €" + PayBill());
     }
 }
