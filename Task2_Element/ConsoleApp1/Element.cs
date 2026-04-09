@@ -2,21 +2,23 @@ using System;
 
 class Element
 {
-    public int AtomicNumber { get; set; }
-    public string Name { get; set; }
-    public string Category { get; set; }
+    public int AtomicNumber;
+    public string Name;
+    public string Type;
 
-    public Element(int atomicNumber, string name, string category)
+    // Constructor
+    public Element(int atomicNumber, string name, string type)
     {
+        Console.WriteLine("Element Created");
         AtomicNumber = atomicNumber;
         Name = name;
-        Category = category;
+        Type = type;
     }
 
-    public void Display()
+    public void ShowElement()
     {
-        Console.WriteLine("Atomic Number: " + AtomicNumber);
+        Console.WriteLine("\nAtomic Number: " + AtomicNumber);
         Console.WriteLine("Name: " + Name);
-        Console.WriteLine("Class: " + Category);
+        Console.WriteLine("Type: " + Type);
     }
 }

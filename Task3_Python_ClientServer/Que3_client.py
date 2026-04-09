@@ -1,26 +1,23 @@
 import socket
+import json
 
-HOST = '127.0.0.1'
-PORT = 5050
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-client.connect((HOST, PORT))
-
-print("=== EasyDrive Registration ===")
+client = socket.socket()
+client.connect(("localhost", 5000))
 
 name = input("Enter Name: ")
 address = input("Enter Address: ")
-pps = input("Enter PPS Number: ")
-license = input("Enter Driving License: ")
+pps = input("Enter PPS: ")
 
-data = f"{name},{address},{pps},{license}"
+data = {
+    "name": name,
+    "address": address,
+    "pps": pps
+}
 
-client.send(data.encode())
+client.send(json.dumps(data).encode())
 
-registration = client.recv(1024).decode()
+reg_id = client.recv(1024).decode()
 
-print("Registration Successful!")
-print("Your Registration Number:", registration)
+print("Registration ID:", reg_id)
 
 client.close()
